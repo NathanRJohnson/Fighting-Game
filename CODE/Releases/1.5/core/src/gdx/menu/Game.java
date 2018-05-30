@@ -35,12 +35,12 @@ public class Game extends ApplicationAdapter {
     public void render() {
        fBlackBelt.applyForce(vGravity);
        fFighter.applyForce(vGravity);
-        if (fBlackBelt.vLocation.y <= 171) {
+        if (fBlackBelt.vLocation.y <= 171 && fBlackBelt.vLocation.x > 45 && fBlackBelt.vLocation.x < 530) {
 
             fBlackBelt.applyForce(vNormal);
             fBlackBelt.vLocation.y = 170;
         }
-        if (fFighter.vLocation.y <= 181) {
+        if (fFighter.vLocation.y <= 181 && fFighter.vLocation.x > 15 && fFighter.vLocation.x < 530) {
 
             fFighter.applyForce(vNormal);
             fFighter.vLocation.y = 180;
