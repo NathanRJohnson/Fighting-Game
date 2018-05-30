@@ -10,6 +10,7 @@ public class Fighter extends Sprite {
     public PVector vLocation, vVelocity, vAcceleration;
     double dMaxFall;
     double dCeiling = 230; //Maximum Jump Height
+    double dDelay;
 
     public Fighter(String sFile, int nX, int nY, int nW, int nH, int _nPlayer) {
         super(new Texture(sFile));
@@ -19,43 +20,52 @@ public class Fighter extends Sprite {
 
         dMaxFall = 5;
         setSize(nW, nH);
-        setPosition(nX,nY);
+        setPosition(nX, nY);
         setFlip(true, false);
         nPlayer = _nPlayer;
+
+
     }
 
-    public void move(Fighter f) {
+    public void move() {
         vVelocity.add(vAcceleration);
         vLocation.add(vVelocity);
         vAcceleration.mult(0);
 
         if (nPlayer == 1) {
+            dDelay += 0.1;
             if (Gdx.input.isKeyPressed(Input.Keys.A))
                 vLocation.x -= 3f;
 
             if (Gdx.input.isKeyPressed(Input.Keys.D))
                 vLocation.x += 5f;
 
-            if( vLocation.y < dCeiling) {
-                if (Gdx.input.isKeyPressed(Input.Keys.W))
+            if (vLocation.y < dCeiling && dDelay > 3) {
+                if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+                    dDelay = 0;
                     vVelocity.y = 10f;
-
+                }
             }
         }
+
         if (nPlayer == 2) {
+            dDelay += 0.1;
             if (Gdx.input.isKeyPressed(Input.Keys.LEFT))
                 vLocation.x -= 5f;
 
             if (Gdx.input.isKeyPressed(Input.Keys.RIGHT))
                 vLocation.x += 3f;
-            if( vLocation.y < dCeiling) {
+
+            if (vLocation.y < dCeiling && dDelay > 3) {
                 if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
                     vVelocity.y = 10f;
+                    dDelay = 0;
                 }
             }
         }
     }
-    public void applyForce (PVector vForce){
+
+    public void applyForce(PVector vForce) {
         PVector f = vForce.get();
         vAcceleration.add(f);
 
