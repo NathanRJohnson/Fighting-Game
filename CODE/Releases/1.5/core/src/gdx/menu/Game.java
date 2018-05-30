@@ -35,10 +35,16 @@ public class Game extends ApplicationAdapter {
     @Override
     public void render() {
        fBlackBelt.applyForce(vGravity);
-        if (rect.) {
-            System.out.println("Broverlapping");
+       fFighter.applyForce(vGravity);
+        if (fBlackBelt.vLocation.y <= 190) {
+
             fBlackBelt.applyForce(vNormal);
             fBlackBelt.vLocation.y = 190;
+        }
+        if (fFighter.vLocation.y <= 190) {
+
+            fFighter.applyForce(vNormal);
+            fFighter.vLocation.y = 190;
         }
         fFighter.move(fFighter);
         fBlackBelt.move(fBlackBelt);
