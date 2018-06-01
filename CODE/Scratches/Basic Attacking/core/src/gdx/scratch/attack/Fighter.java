@@ -1,5 +1,4 @@
-package gdx.Classes;
-
+package gdx.scratch.attack;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,12 +11,12 @@ public class Fighter extends Sprite {
     double dCeiling = 230; //Maximum Jump Height
     double dDelay;
 
+
     public Fighter(String sFile, int nX, int nY, int nW, int nH, int _nPlayer) {
         super(new Texture(sFile));
         vLocation = new PVector(nX, nY);
         vVelocity = new PVector(0, 0);
         vAcceleration = new PVector(0, 0);
-
         dMaxFall = 5;
         setSize(nW, nH);
         setPosition(nX, nY);
@@ -27,6 +26,8 @@ public class Fighter extends Sprite {
         } else {
             setFlip(true, false);
         }
+
+
     }
 
     public void move() {
@@ -37,7 +38,7 @@ public class Fighter extends Sprite {
         if (nPlayer == 1) {
             dDelay += 0.1;
             if (Gdx.input.isKeyPressed(Input.Keys.A))
-                vLocation.x -= 4f;
+                vLocation.x -= 3f;
 
             if (Gdx.input.isKeyPressed(Input.Keys.D))
                 vLocation.x += 5f;
@@ -56,7 +57,7 @@ public class Fighter extends Sprite {
                 vLocation.x -= 5f;
 
             if (Gdx.input.isKeyPressed(Input.Keys.RIGHT))
-                vLocation.x += 4f;
+                vLocation.x += 3f;
 
             if (vLocation.y < dCeiling && dDelay > 3) {
                 if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
@@ -66,6 +67,7 @@ public class Fighter extends Sprite {
             }
         }
     }
+
 
     public void applyForce(PVector vForce) {
         PVector f = vForce.get();
