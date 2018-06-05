@@ -2,31 +2,32 @@ package gdx.scratch.attack;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Rectangle;
 
-import java.awt.print.Printable;
 
 public class Main extends ApplicationAdapter {
 	SpriteBatch batch;
-	//Texture txBB, txBL;
 	public Fighter spfBlackBelt, spfBadLogic;
 	Texture txSpace, txHitBox;
-	double dHealth1 = 1000000, dHealth2 = 10000000;
+	double  dPunchDelay1 = 2, dPunchDelay2 = 2;
+	float fHealth1 = 100, fHealth2 = -100;
 	//HitBox Testers------
 	public Sprite sprPunchBox1, sprPunchBox2;
+
 	//---------------------
+
+	//KnockBack--------------;
+	public double dSlappedTimer1 = 1, dSlappedTimer2 = 1;
+
+	//-----------------------
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-	//	txBB = new Texture("Fighting_Man.png");
-	//	txBL = new Texture("badlogic.jpg");
+
 		txHitBox = new Texture("HitBox.png");
 		txSpace = new Texture("Space_BG.jpg");
 		spfBadLogic = new Fighter("Ronin.png", 0,30,100,100,1);
@@ -37,37 +38,51 @@ public class Main extends ApplicationAdapter {
 
 	@Override
 	public void render () {
+
 		//basicAttack();
-
-
-
-		if (dHealth1 < 0.0)
-			System.out.println("Player 2 wins");
-
-		if (dHealth2 < 0.0)
-			System.out.println("Player 1 wins");
-
-		spfBadLogic.move();
-		spfBlackBelt.move();
+		dPunchDelay1 += 0.1;
+		dPunchDelay2 += 0.1;
+		dSlappedTimer1 += 0.1;
+		dSlappedTimer2 += 0.1;
+		if (dSlappedTimer1 < 1)
+			spfBadLogic.vLocation.x -= 8f;
+		if (dSlappedTimer2 < 1)
+			spfBlackBelt.vLocation.x += 8f;
+		spfBadLogic.move(dSlappedTimer1);
+		spfBlackBelt.move(dSlappedTimer2);
 		batch.begin();
 		batch.draw(txSpace,0,0, Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		batch.draw(spfBlackBelt, spfBlackBelt.vLocation.x, spfBlackBelt.vLocation.y, spfBlackBelt.getWidth(), spfBlackBelt.getHeight());
 		batch.draw(spfBadLogic, spfBadLogic.vLocation.x, spfBadLogic.vLocation.y, spfBadLogic.getWidth(), spfBadLogic.getHeight());
-		if (Gdx.input.isKeyPressed(Input.Keys.ENTER)) {
-			if (basicAttack(spfBadLogic,spfBlackBelt) == true)
-				dHealth2 -= 10;
+		batch.end();
+		if (Gdx.input.isKeyPressed(Input.Keys.ENTER) && dPunchDelay1 > 2) { //BlackBelt
+			if (basicAttack(spfBadLogic,spfBlackBelt)) {
+				fHealth2 += 10;
+				dPunchDelay1 = 0;
+				dSlappedTimer1 = 0;
+
+				if (fHealth2 > 0)
+					System.out.println("Player 1 wins");
+			}
 
 		}
-		if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
-			if (basicAttack(spfBlackBelt,spfBadLogic) == true)
-				dHealth1 -= 10;
+		if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && dPunchDelay2 > 2) {
+			if (basicAttack(spfBlackBelt,spfBadLogic)) {
+				fHealth1 -= 10;
+				dPunchDelay2 = 0;
+				dSlappedTimer2 = 0;
+				if (fHealth1 < 0)
+					System.out.println("Player 2 wins");
+			}
 		}
-		batch.end();
+
+		if (Gdx.input.isKeyPressed(Input.Keys.Q)) {
+			spfBadLogic.vLocation.x += 20f;
+			}
+
 	}
+
 	public boolean basicAttack(Fighter spfPlayer, Fighter spfEnemy) {
-		//System.out.println(fEnemy.vLocation.x +" " +fEnemy.getWidth());
-		//System.out.println(spfPlayer.vLocation.x);
-		//System.out.println();
 		if (spfPlayer.vLocation.x > spfEnemy.vLocation.x) {
 			if (spfPlayer.vLocation.x < spfEnemy.vLocation.x + spfEnemy.getWidth()) {
 				System.out.println("Get punched lefty");

@@ -16,7 +16,7 @@ public class Game extends ApplicationAdapter {
     Fighter fFighter;
     Fighter fBlackBelt;
     Sprite sprPlatform;
-    PVector vGravity, vNormal;
+    PVector vGravity, vNormal, vKnockBack;
 
     @Override
     public void create() {
@@ -28,7 +28,6 @@ public class Game extends ApplicationAdapter {
         sprPlatform = new Sprite(txPlatform);
         vGravity = new PVector(0, -1);
         vNormal  = new PVector(0, 1);
-
     }
 
     @Override

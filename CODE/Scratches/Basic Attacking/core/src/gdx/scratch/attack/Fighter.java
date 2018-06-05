@@ -1,4 +1,5 @@
 package gdx.scratch.attack;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
@@ -30,18 +31,21 @@ public class Fighter extends Sprite {
 
     }
 
-    public void move() {
+    public void move(double dTime) {
         vVelocity.add(vAcceleration);
         vLocation.add(vVelocity);
         vAcceleration.mult(0);
-
         if (nPlayer == 1) {
             dDelay += 0.1;
-            if (Gdx.input.isKeyPressed(Input.Keys.A))
-                vLocation.x -= 3f;
+            if (Gdx.input.isKeyPressed(Input.Keys.A) && dTime >= 1) {
 
-            if (Gdx.input.isKeyPressed(Input.Keys.D))
+                vLocation.x -= 3f;
+            }
+
+            if (Gdx.input.isKeyPressed(Input.Keys.D) && dTime >= 1) {
+
                 vLocation.x += 5f;
+            }
 
             if (vLocation.y < dCeiling && dDelay > 3) {
                 if (Gdx.input.isKeyPressed(Input.Keys.W)) {
@@ -53,11 +57,13 @@ public class Fighter extends Sprite {
 
         if (nPlayer == 2) {
             dDelay += 0.1;
-            if (Gdx.input.isKeyPressed(Input.Keys.LEFT))
+            if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && dTime >= 1) {
                 vLocation.x -= 5f;
+            }
 
-            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT))
+            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && dTime >= 1) {
                 vLocation.x += 3f;
+            }
 
             if (vLocation.y < dCeiling && dDelay > 3) {
                 if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
@@ -74,4 +80,6 @@ public class Fighter extends Sprite {
         vAcceleration.add(f);
 
     }
+
 }
+
