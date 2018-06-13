@@ -1,14 +1,14 @@
-package gdx.scratch.game;
-
+package gdx.game;
 
 import com.badlogic.gdx.Game;
-import gdx.scratch.game.Screens.ScrMenu;
-import gdx.scratch.game.Screens.ScrPlay;
+import gdx.game.Screens.ScrMenu;
+import gdx.game.Screens.ScrGame;
 
-public class Main extends Game {
+public class GamMenu extends Game {
 	ScrMenu scrMenu;
-	ScrPlay scrPlay;
+	ScrGame scrPlay;
 	int nScreen;
+
 	public void updateState(int _nScreen){
 		nScreen = _nScreen;
 		if(nScreen == 0){
@@ -18,19 +18,19 @@ public class Main extends Game {
 		}
 	}
 	@Override
-	public void create() {
+	public void create () {
 		//  this.setScreen(new ScrMenu(this));
 		nScreen = 0;
 		scrMenu = new ScrMenu(this);
-		scrPlay = new ScrPlay(this);
+		scrPlay = new ScrGame(this);
 		updateState(0);
 	}
 
 	@Override
-	public void render() {
+	public void render () {
 		super.render();
-
 	}
+
 	@Override
 
 	public void pause() {

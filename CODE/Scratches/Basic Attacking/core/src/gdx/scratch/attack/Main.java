@@ -58,12 +58,12 @@ public class Main extends ApplicationAdapter {
 
         if (Gdx.input.isKeyPressed(Input.Keys.ENTER) && dPunchDelay1 > 3 && dSlappedTimer2 > 2) { //BlackBelt
             spfBlackBelt.canMove = false;
+
             basicAttack(spfBadLogic, spfBlackBelt);
             if (isAttack == true) {
                 fHealth2 += 10;
-                dPunchDelay1 = 0;
                 dSlappedTimer1 = 0;
-
+                dPunchDelay1 = 0;
                 if (fHealth2 > 0)
                     System.out.println("Player 1 wins");
             }
@@ -75,6 +75,7 @@ public class Main extends ApplicationAdapter {
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && dPunchDelay2 > 3 && dSlappedTimer1 > 2) {
             basicAttack(spfBlackBelt, spfBadLogic);
             spfBadLogic.canMove = false;
+
             if (isAttack == true) {
                 fHealth1 -= 10;
                 dPunchDelay2 = 0;

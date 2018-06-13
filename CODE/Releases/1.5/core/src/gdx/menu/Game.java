@@ -16,13 +16,13 @@ public class Game extends ApplicationAdapter {
     Fighter fFighter;
     Fighter fBlackBelt;
     Sprite sprPlatform;
-    PVector vGravity, vNormal, vKnockBack;
+    PVector vGravity, vNormal;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
         txPlatform = new Texture("Platform.png");
-            txSpace = new Texture("Space_BG.jpg");
+        txSpace = new Texture("Space_BG.jpg");
         fFighter = new Fighter("Ronin.png", 70, 170, 100, 100, 1);
         fBlackBelt = new Fighter("Fighter_Man.png", 440, 170, 100, 100, 2);
         sprPlatform = new Sprite(txPlatform);
