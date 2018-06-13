@@ -14,16 +14,11 @@ public class Main extends ApplicationAdapter {
 	Texture txSpace, txHitBox;
 	double  dPunchDelay1 = 2, dPunchDelay2 = 2;
 	float fHealth1 = 100, fHealth2 = -100;
-	//HitBox Testers------
-	public Sprite sprPunchBox1, sprPunchBox2;
-	float fly = 0;
-	//---------------------
+
 
 	//KnockBack--------------;
 	public double dSlappedTimer1 = 1, dSlappedTimer2 = 1;
 	//-----------------------
-	//Blocking--------------
-	//----------------------
 
 	@Override
 	public void create () {
