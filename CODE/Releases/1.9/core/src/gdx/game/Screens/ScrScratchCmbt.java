@@ -13,7 +13,8 @@ public class ScrScratchCmbt implements Screen, InputProcessor {
     GamMenu gamMenu;
     SpriteBatch batch;
     public SprScratchFighter spfBlackBelt, spfBadLogic;
-    Texture txSpace, txHitBox;
+    //CMBT scratch-----------------------------
+    Texture txSpace;
     double  dPunchDelay1 = 2, dPunchDelay2 = 2;
     float fHealth1 = 100, fHealth2 = -100;
 

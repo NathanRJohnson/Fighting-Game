@@ -25,12 +25,14 @@ public class ScrScratchHealth implements Screen, InputProcessor {
         Gdx.input.setInputProcessor(this);
         System.out.println("Scratch Health Bar");
         batch = new SpriteBatch();
+        //Health Bar Scratch Stuff -----------------------
         txHealthBar = new Texture("Health_Bar.png");
         txVersus = new Texture("VS.jpg");
         txBarColor1 = new Texture("Bar_Color.png");
         txBarColor2 = new Texture("Bar_Color.png");
         sprHealthBar1 = new Sprite(txHealthBar);
         sprHealthBar2 = new Sprite(txHealthBar);
+        //--------------------------------------------
     }
 
     @Override
@@ -46,6 +48,7 @@ public class ScrScratchHealth implements Screen, InputProcessor {
             nWidth2 = -225;
         }
         batch.begin();
+        //Health Bar Scratch Stuff -----------------------
         batch.draw(txVersus, 288, 400, 70, 70);
         batch.draw(txBarColor1, 50, 420, nWidth1, 40);
         batch.draw(txBarColor2, 590, 420, nWidth2, 40);
@@ -58,6 +61,7 @@ public class ScrScratchHealth implements Screen, InputProcessor {
         sprHealthBar2.setSize(300, 200);
         sprHealthBar2.setFlip(true, false);
         sprHealthBar2.draw(batch);
+        //--------------------------------------------------
         batch.end();
 
     }

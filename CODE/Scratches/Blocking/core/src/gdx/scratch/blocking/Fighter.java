@@ -79,13 +79,13 @@ public class Fighter extends Sprite {
                     dDelay = 0;
                 }
             }
-            if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-                isBlocking = true;
-                //System.out.println("Am blocking");
-            } else {
-                isBlocking = false;
-               // System.out.println("Not Blocking");
-            }
+                if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+                    isBlocking = true;
+                    //System.out.println("Am blocking");
+                } else {
+                    isBlocking = false;
+                   // System.out.println("Not Blocking");
+                }
         }
     }
 

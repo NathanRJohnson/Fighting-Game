@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class SprScratchFighter extends Sprite {
-    public boolean canMove=true;
+    public boolean canMove = true;
     //boolean canMove = true;
     int nPlayer;
     public PVector vLocation, vVelocity, vAcceleration;
@@ -57,15 +57,7 @@ public class SprScratchFighter extends Sprite {
                         vVelocity.y = 10f;
                     }
                 }
-                if (Gdx.input.isKeyPressed(Input.Keys.S)) {
-                    isBlocking = true;
-                    //System.out.println("Am blocking");
-                } else {
-                    isBlocking = false;
-                    // System.out.println("Not Blocking");
-                }
             }
-
             if (nPlayer == 2) {
                 dDelay += 0.1;
                 if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && dTime >= 1) {
@@ -85,7 +77,6 @@ public class SprScratchFighter extends Sprite {
             }
         }
     }
-
 
     public void applyForce(PVector vForce) {
         PVector f = vForce.get();

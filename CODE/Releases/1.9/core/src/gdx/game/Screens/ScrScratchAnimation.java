@@ -16,7 +16,7 @@ public class ScrScratchAnimation implements Screen, InputProcessor {
     GamMenu gamMenu;
     SpriteBatch batch;
 
-    //Animation Vars
+    //Animation Vars--------------------------
     boolean isRight;
     //Key Bools------
     boolean isDown = false;
@@ -24,25 +24,28 @@ public class ScrScratchAnimation implements Screen, InputProcessor {
     int nPunchState = 1;
     //---------------
     Texture txSheet;
-    Animation araniDude[];
+    Animation araniBlackBelt[];
     TextureRegion trTemp;
-    Sprite sprDude;
+    Sprite sprBlackBelt;
     int fW, fH, fSx, fSy;
     int nFrame, nPos;
     int nX = 100, nY = 100;
 
-    //------------
-    public ScrScratchAnimation(GamMenu _gamMenu){gamMenu = _gamMenu;}
+    //----------------------------------------------
+    public ScrScratchAnimation(GamMenu _gamMenu) {
+        gamMenu = _gamMenu;
+    }
 
     @Override
     public void show() {
-    System.out.println("Animation Scratch");
+        System.out.println("Animation Scratch");
+        //Animation Scratch Stuff ---------------------------------------
         Gdx.input.setInputProcessor(this);
         batch = new SpriteBatch();
         txSheet = new Texture("BlackBelt_SS.png");
         nFrame = 0;
         nPos = 0;
-        araniDude = new Animation[8];
+        araniBlackBelt = new Animation[8];
         fW = txSheet.getWidth() / 3;
         fH = txSheet.getHeight() / 8;
         for (int i = 0; i < 8; i++) {
@@ -50,14 +53,15 @@ public class ScrScratchAnimation implements Screen, InputProcessor {
             for (int j = 0; j < 3; j++) {
                 fSx = j * fW;
                 fSy = i * fH;
-                sprDude = new Sprite(txSheet, fSx, fSy, fW, fH);
+                sprBlackBelt = new Sprite(txSheet, fSx, fSy, fW, fH);
                 //sprDude.setFlip(false, true);
-                sprDude.setSize(200, 300);
-                arSprDude[j] = new Sprite(sprDude);
+                sprBlackBelt.setSize(200, 300);
+                arSprDude[j] = new Sprite(sprBlackBelt);
             }
-            araniDude[i] = new Animation(3f, arSprDude);
+            araniBlackBelt[i] = new Animation(3f, arSprDude);
 
         }
+        //--------------------------------------------------------------
 
 
     }
@@ -68,9 +72,7 @@ public class ScrScratchAnimation implements Screen, InputProcessor {
         Gdx.gl.glClearColor(0, 1, 1, 1); //Cyan background.
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         //Animation Stuff
-
-
-        trTemp = (TextureRegion) araniDude[nPos].getKeyFrame(nFrame, false);
+        trTemp = (TextureRegion) araniBlackBelt[nPos].getKeyFrame(nFrame, false);
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             nX = nX -= 1;
             nPos = 3;
@@ -89,50 +91,37 @@ public class ScrScratchAnimation implements Screen, InputProcessor {
             }
             isRight = true;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.ENTER) && isRight == false) {
+        if (Gdx.input.isKeyPressed(Input.Keys.ENTER)) {
 
 
             if (nPunchState == 1) {
-                nPos = 4;
+                if (isRight == false)
+                    nPos = 4;
+                if (isRight == true)
+                    nPos = 5;
                 if (nFrame > 12) {
                     nPunchState = -1;
-                    nPos = 2;
+                    if (isRight == false)
+                        nPos = 2;
+                    if (isRight == true)
+                        nPos = 0;
                 }
                 nFrame++;
             }
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.ENTER) && isRight == true) {
-
-            if (nPunchState == 1) {
-                nPos = 5;
-                if (nFrame > 12) {
-                    nPunchState = -1;
-                    nPos = 0;
-                }
-                nFrame++;
-            }
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && isRight == false) {
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
             //nPos = 7;
             if (nFrame > 5) {
-                nPos = 7;
+                if (isRight == false)
+                    nPos = 7;
+                if (isRight == true)
+                    nPos = 6;
                 nFrame = 6;
             }
             nFrame++;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && isRight == true) {
-            isDown = true;
-            if (isDown == true) {
-                if (nFrame > 5) {
-                    nPos = 6;
-                    nFrame = 6;
-                }
-                nFrame++;
 
-            }
-
-        }
-        if (!Gdx.input.isKeyPressed(Input.Keys.ANY_KEY) ) {
+        if (!Gdx.input.isKeyPressed(Input.Keys.ANY_KEY)) {
             nFrame = 0;
             if (isRight)
                 nPos = 0;
@@ -140,13 +129,12 @@ public class ScrScratchAnimation implements Screen, InputProcessor {
                 nPos = 2;
             //System.out.println(nFrame);
             nPunchState = 1;
-
         }
+        //-------------------------------------------------------------------------------
         batch.begin();
         batch.draw(trTemp, nX, nY);
         batch.end();
     }
-
 
 
     @Override
