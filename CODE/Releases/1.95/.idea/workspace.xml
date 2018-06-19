@@ -27,12 +27,10 @@
       <file leaf-file-name="ScrMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1881">
+            <state relative-caret-position="1785">
               <caret line="129" column="43" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#850#851#0" expanded="true" />
-                <element signature="e#884#885#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,7 +39,7 @@
       <file leaf-file-name="ScrBckgd.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrBckgd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="544">
               <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -53,7 +51,7 @@
       <file leaf-file-name="ScrInstruc.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrInstruc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="527">
               <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -62,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScrScratch.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ScrScratch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrScratch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="646">
               <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -91,7 +89,7 @@
       <file leaf-file-name="ScrPlayers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrPlayers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="510">
               <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,15 +100,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamMenu.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GamMenu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Menu/GamMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+            <state relative-caret-position="402">
+              <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3284#3285#0" expanded="true" />
-                <element signature="e#3315#3316#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,7 +124,7 @@
       <file leaf-file-name="ScrScratchAnimation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrScratchAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
+            <state relative-caret-position="2499">
               <caret line="157" column="25" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -140,7 +136,7 @@
       <file leaf-file-name="ScrScratchBasicA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrScratchBasicA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="357">
               <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -736,6 +732,7 @@
     </option>
     <option name="modificationStamps">
       <map>
+        <entry key="$PROJECT_DIR$" value="9173394672000" />
         <entry key="$PROJECT_DIR$/build.gradle" value="2346566927" />
         <entry key="$PROJECT_DIR$/core/build.gradle" value="2971590108" />
         <entry key="$PROJECT_DIR$/desktop/build.gradle" value="372292435" />
@@ -853,6 +850,8 @@
     </option>
     <option name="projectSyncType">
       <map>
+        <entry key="D:/Kieran-Final-Project" value="PREVIEW" />
+        <entry key="D:/SNguyen/Fighting-Game/Game" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../1.6" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../Game/Fighting-Game/CODE/Releases/1.5" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../Game/Fighting-Game/CODE/Releases/1.6" value="PREVIEW" />
@@ -865,8 +864,6 @@
         <entry key="$PROJECT_DIR$/../SNguyen/Fighting-Game/Game" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../Scratches/1.65" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../Scratches/Button Test/1.65" value="PREVIEW" />
-        <entry key="D:/Kieran-Final-Project" value="PREVIEW" />
-        <entry key="D:/SNguyen/Fighting-Game/Game" value="PREVIEW" />
         <entry key="D:/boo" value="PREVIEW" />
       </map>
     </option>
@@ -889,20 +886,21 @@
         <option value="$PROJECT_DIR$/core/src/gdx/game/Objects/SprFormerScreen.java" />
         <option value="$PROJECT_DIR$/core/src/gdx/game/Objects/FormerScreen.java" />
         <option value="$PROJECT_DIR$/core/src/gdx/game/Objects/newMusic.java" />
-        <option value="$PROJECT_DIR$/core/src/gdx/game/Menu/GamMenu.java" />
         <option value="$PROJECT_DIR$/core/src/gdx/game/Screens/ScrInstruc.java" />
         <option value="$PROJECT_DIR$/core/src/gdx/game/Screens/ScrBckgd.java" />
         <option value="$PROJECT_DIR$/core/src/gdx/game/Screens/ScrPlay.java" />
         <option value="$PROJECT_DIR$/core/src/gdx/game/Screens/ScrPlayers.java" />
         <option value="$PROJECT_DIR$/core/src/gdx/game/Screens/ScrMenu.java" />
         <option value="$PROJECT_DIR$/core/src/gdx/game/Screens/ScrScratch.java" />
+        <option value="$PROJECT_DIR$/core/src/gdx/game/Menu/GamMenu.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -1061,35 +1059,36 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32844242" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32738096" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3452381" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3452514" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18656716" />
-      <window_info anchor="bottom" id="Build" order="10" weight="0.32731378" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19174758" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.32731378" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
@@ -1099,12 +1098,12 @@
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35357141" />
       <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19660194" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -1114,7 +1113,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32261905" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1207,8 +1206,6 @@
           <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3284#3285#0" expanded="true" />
-            <element signature="e#3315#3316#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1316,8 +1313,6 @@
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3284#3285#0" expanded="true" />
-            <element signature="e#3315#3316#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1457,28 +1452,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Objects/FormerScreen.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Objects/newMusic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Menu/GamMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3284#3285#0" expanded="true" />
-            <element signature="e#3315#3316#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Objects/newMusic.java" />
     <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrScratchBasicA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="357">
           <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1488,7 +1465,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrBckgd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="544">
           <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1498,7 +1475,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrInstruc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="527">
           <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1515,7 +1492,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrPlayers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="510">
           <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1527,7 +1504,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrScratchAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
+        <state relative-caret-position="2499">
           <caret line="157" column="25" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1537,24 +1514,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1881">
+        <state relative-caret-position="1785">
           <caret line="129" column="43" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Screens/ScrScratch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="646">
           <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#767#768#0" expanded="true" />
             <element signature="e#801#802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/gdx/game/Menu/GamMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
