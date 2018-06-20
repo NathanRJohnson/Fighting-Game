@@ -19,9 +19,12 @@ public class ScrScratchGravity implements Screen, InputProcessor {
     Sprite sprPlatform;
     Vector2 v2Gravity, v2Normal;
     GamMenu gamMenu;
-    double dTimer =0;
+    double dTimer = 0;
 
-    public ScrScratchGravity(GamMenu _gamMenu){gamMenu = _gamMenu;}
+    public ScrScratchGravity(GamMenu _gamMenu) {
+        gamMenu = _gamMenu;
+    }
+
     @Override
     public void show() {
         Gdx.input.setInputProcessor(this);
@@ -32,7 +35,7 @@ public class ScrScratchGravity implements Screen, InputProcessor {
         spfBlackBelt = new SprFighter("Fighter_Man.png", 440, 170, 100, 100, 2);
         sprPlatform = new Sprite(txPlatform);
         v2Gravity = new Vector2(0, -1);
-        v2Normal  = new Vector2(0, 1);
+        v2Normal = new Vector2(0, 1);
     }
 
     @Override

@@ -207,20 +207,20 @@ public class ScrPlay implements Screen, InputProcessor {
             //System.out.println(nFrame);
             nPunchState = 1;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.S)){
+        if (Gdx.input.isKeyPressed(Input.Keys.S)) {
             nSecretToggle = 1;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.X)){
+        if (Gdx.input.isKeyPressed(Input.Keys.X)) {
             nSecretToggle = 2;
         }
         //-------------------------------------------------------------------------------
 
         batch.begin();
-        if(nSecretToggle == 1) {
+        if (nSecretToggle == 1) {
             batch.draw(txDust, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
             batch.draw(txRockPlatform, 45, 10, 550, 200);
         }
-        if(nSecretToggle == 2) {
+        if (nSecretToggle == 2) {
             batch.draw(txSpace, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
             batch.draw(txSpacePlatform, 45, 10, 550, 200);
         }
@@ -242,9 +242,9 @@ public class ScrPlay implements Screen, InputProcessor {
         //--------------------------------------------------
         batch.draw(trTemp, spfBlackBelt.v2Location.x, spfBlackBelt.v2Location.y, spfBlackBelt.getWidth(), spfBlackBelt.getHeight());
         if (P2HasWon && !P1HasWon)
-            batch.draw(txP1Wins,170,100,300,300);
+            batch.draw(txP1Wins, 170, 100, 300, 300);
         if (P1HasWon && !P2HasWon)
-            batch.draw(txP2Wins,170,100,300,300);
+            batch.draw(txP2Wins, 170, 100, 300, 300);
         batch.end();
 
         //Punching----------------------------------------------------------------------------------------
@@ -294,7 +294,7 @@ public class ScrPlay implements Screen, InputProcessor {
         if (Gdx.input.isKeyPressed(Input.Keys.Q)) {
             spfSamurai.v2Location.x += 20f;
         }
-       // ----------------------------------------------------------------------------------------
+        // ----------------------------------------------------------------------------------------
     }
 
     public boolean basicAttack(SprFighter spfPlayer, SprFighter spfEnemy) {

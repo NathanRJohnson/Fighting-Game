@@ -11,16 +11,19 @@ import com.badlogic.gdx.math.Vector2;
 import gdx.game.Menu.GamMenu;
 import gdx.game.Objects.Title;
 
-public class ScrBckgd implements Screen,InputProcessor {
+public class ScrBckgd implements Screen, InputProcessor {
     SpriteBatch batch;
-    Texture txBg;
-    Sprite sprBg;
+    Texture txBg, txPlaybg;
+    Sprite sprBg, sprPlayBg;
     Title ttlGame;
     OrthographicCamera oc;
     Vector2 vMouse;
     GamMenu gamMenu;
 
-    public ScrBckgd(GamMenu _gamMenu){gamMenu = _gamMenu;}
+    public ScrBckgd(GamMenu _gamMenu) {
+        gamMenu = _gamMenu;
+    }
+
     @Override
     public void show() {
         //ortho
@@ -31,15 +34,20 @@ public class ScrBckgd implements Screen,InputProcessor {
         //vector
         vMouse = new Vector2(0, 0);
         //Texture
-        txBg = new Texture("backgroundselection.jpg");
+        txPlaybg = new Texture("Dusty_bg.png");
+        txBg = new Texture("background4.png");
         //sprite
         batch = new SpriteBatch();
         sprBg = new Sprite(txBg);
         sprBg.setSize(800, 500);
         sprBg.setFlip(false, true);
+        sprPlayBg = new Sprite(txPlaybg);
+        sprPlayBg.setFlip(false, true);
+        sprPlayBg.setSize(400, 300);
+        sprPlayBg.setPosition(Gdx.graphics.getWidth() / 2 - 190, Gdx.graphics.getHeight() / 2 - 80);
         //title
         ttlGame = new Title(400, 400, Gdx.graphics.getWidth() / 2 - 188, Gdx.graphics.getHeight() / 2 - 350, "title.png");
-
+        System.out.println("Background Screen");
     }
 
 
@@ -49,6 +57,7 @@ public class ScrBckgd implements Screen,InputProcessor {
         batch.begin();
         sprBg.draw(batch);
         ttlGame.draw(batch);
+        sprPlayBg.draw(batch);
         batch.end();
     }
 

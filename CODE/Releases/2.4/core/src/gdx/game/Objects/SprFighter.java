@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 public class SprFighter extends Sprite {
     int nPlayer;
     public Vector2 v2Location, v2Velocity, v2Acceleration;
-   public boolean canMove;
+    public boolean canMove;
     double dMaxFall;
     double dCeiling = 230; //Maximum Jump Height
     double dDelay;
@@ -63,10 +63,10 @@ public class SprFighter extends Sprite {
 
         if (nPlayer == 2) {
             dDelay += 0.1;
-            if (Gdx.input.isKeyPressed(Input.Keys.LEFT)&& dTime >= 2 && canMove)
+            if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && dTime >= 2 && canMove)
                 v2Location.x -= 4f;
 
-            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)&& dTime >= 2 && canMove)
+            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && dTime >= 2 && canMove)
                 v2Location.x += 4f;
 
             if (v2Location.y < dCeiling && dDelay > 3) {

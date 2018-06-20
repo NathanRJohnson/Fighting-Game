@@ -12,14 +12,16 @@ import com.badlogic.gdx.math.Vector2;
 import gdx.game.Menu.GamMenu;
 import gdx.game.Objects.Button;
 
-public class ScrScratch implements Screen,InputProcessor {
-    Button  btnAnimation,btnCmbt,btnHealth;
+public class ScrScratch implements Screen, InputProcessor {
+    Button btnAnimation, btnCmbt, btnHealth;
     SpriteBatch batch;
     OrthographicCamera oc;
     Vector2 vMouse;
     GamMenu gamMenu;
 
-    public ScrScratch(GamMenu _gamMenu){gamMenu = _gamMenu;}
+    public ScrScratch(GamMenu _gamMenu) {
+        gamMenu = _gamMenu;
+    }
 
     @Override
     public void show() {
@@ -33,9 +35,9 @@ public class ScrScratch implements Screen,InputProcessor {
         //Sprite
         batch = new SpriteBatch();
         //Buttons
-        btnAnimation = new Button(100, 100, Gdx.graphics.getWidth()/2-50, Gdx.graphics.getHeight()/2-150, "animation.png");
-        btnCmbt = new Button(100, 100, Gdx.graphics.getWidth()/2+150, Gdx.graphics.getHeight()/2-150, "cmbt.png");
-        btnHealth = new Button(100, 100, Gdx.graphics.getWidth()/2-250, Gdx.graphics.getHeight()/2-150,"health bar.png");
+        btnAnimation = new Button(100, 100, Gdx.graphics.getWidth() / 2 - 50, Gdx.graphics.getHeight() / 2 - 150, "animation.png");
+        btnCmbt = new Button(100, 100, Gdx.graphics.getWidth() / 2 + 150, Gdx.graphics.getHeight() / 2 - 150, "cmbt.png");
+        btnHealth = new Button(100, 100, Gdx.graphics.getWidth() / 2 - 250, Gdx.graphics.getHeight() / 2 - 150, "health bar.png");
         //btnBasicAttack = new Button(100, 100, Gdx.graphics.getWidth() / 2-250, Gdx.graphics.getHeight() / 2-150, "Basic Attack.png");
     }
 
@@ -45,7 +47,7 @@ public class ScrScratch implements Screen,InputProcessor {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-       // btnBasicAttack.draw(batch);
+        // btnBasicAttack.draw(batch);
         btnHealth.draw(batch);
         btnCmbt.draw(batch);
         btnAnimation.draw(batch);
@@ -98,23 +100,23 @@ public class ScrScratch implements Screen,InputProcessor {
     }
 
     @Override
-    public boolean touchUp(int screenX, int screenY, int pointer, int button){
-                if (button == Input.Buttons.LEFT) {
-        if (isHit(screenX, screenY, btnAnimation)) {
-            System.out.println("Hit animation");
-            gamMenu.updateScreen(10);
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        if (button == Input.Buttons.LEFT) {
+            if (isHit(screenX, screenY, btnAnimation)) {
+                System.out.println("Hit animation");
+                gamMenu.updateScreen(10);
+            }
+            if (isHit(screenX, screenY, btnCmbt)) {
+                System.out.println("Hit blocking");
+                gamMenu.updateScreen(12);
+            }
+            if (isHit(screenX, screenY, btnHealth)) {
+                System.out.println("hit health");
+                gamMenu.updateScreen(13);
+            }
         }
-        if(isHit(screenX, screenY, btnCmbt)){
-            System.out.println("Hit blocking");
-            gamMenu.updateScreen(12);
-        }
-        if(isHit(screenX, screenY, btnHealth)){
-            System.out.println("hit health");
-            gamMenu.updateScreen(13);
-        }
-    }
         return false;
-}
+    }
 
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {

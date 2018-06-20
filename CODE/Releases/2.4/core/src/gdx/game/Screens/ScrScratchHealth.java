@@ -19,7 +19,10 @@ public class ScrScratchHealth implements Screen, InputProcessor {
 
     int nWidth1 = 225, nWidth2 = -225;
 
-    public ScrScratchHealth(GamMenu _gamMenu){gamMenu = _gamMenu;}
+    public ScrScratchHealth(GamMenu _gamMenu) {
+        gamMenu = _gamMenu;
+    }
+
     @Override
     public void show() {
         Gdx.input.setInputProcessor(this);

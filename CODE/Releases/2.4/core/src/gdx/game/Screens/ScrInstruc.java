@@ -11,14 +11,15 @@ import gdx.game.Menu.GamMenu;
 import gdx.game.Objects.Title;
 
 public class ScrInstruc implements Screen, InputProcessor {
-    Texture txBg;
-    Sprite sprBg;
-    Title ttlStart;
+    Texture txBg, txInfo;
+    Sprite sprBg, sprInfo;
     SpriteBatch batch;
     GamMenu gamMenu;
     OrthographicCamera oc;
 
-    public ScrInstruc(GamMenu _gamMenu){gamMenu = _gamMenu;}
+    public ScrInstruc(GamMenu _gamMenu) {
+        gamMenu = _gamMenu;
+    }
 
     @Override
     public void show() {
@@ -30,13 +31,17 @@ public class ScrInstruc implements Screen, InputProcessor {
         Gdx.input.setInputProcessor(this);
         //Texture
         txBg = new Texture("instructionalbckgd1.jpg");
+        txInfo = new Texture("Instruction Menu.png");
         //Sprites
         sprBg = new Sprite(txBg);
         batch = new SpriteBatch();
-        sprBg.setSize(800,500);
-        sprBg.setFlip(false,true);
-        //Title
-        ttlStart = new Title(400, 400, Gdx.graphics.getWidth() / 2 - 188, Gdx.graphics.getHeight() / 2 - 350, "title.png");
+        sprBg.setSize(800, 500);
+        sprBg.setFlip(false, true);
+        sprInfo = new Sprite(txInfo);
+        sprInfo.setFlip(false, true);
+        sprInfo.setSize(600, 500);
+        sprInfo.setPosition(Gdx.graphics.getWidth() / 2 - 300, Gdx.graphics.getHeight() / 2 - 225);
+        System.out.println("Instruction Screen");
     }
 
     @Override
@@ -44,7 +49,7 @@ public class ScrInstruc implements Screen, InputProcessor {
         batch.setProjectionMatrix(oc.combined);
         batch.begin();
         sprBg.draw(batch);
-        ttlStart.draw(batch);
+        sprInfo.draw(batch);
         batch.end();
     }
 
@@ -70,7 +75,7 @@ public class ScrInstruc implements Screen, InputProcessor {
 
     @Override
     public void dispose() {
-    txBg.dispose();
+        txBg.dispose();
     }
 
     @Override

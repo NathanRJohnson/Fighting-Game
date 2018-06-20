@@ -5,9 +5,10 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.audio.Music;
 import gdx.game.Screens.*;
 
-public class GamMenu extends Game{
+public class GamMenu extends Game {
     ScrPlay scrPlay;
     ScrMenu scrMenu;
     ScrBckgd scrBckgd;
@@ -18,7 +19,8 @@ public class GamMenu extends Game{
     ScrScratchHealth scrScratchHealth;
     ScrPlayers scrPlayers;
     int nScreen;
-    boolean Menu= false;
+    Music musBg;
+    boolean Menu = false;
 
 
     // 0 start menu, 1 play screen, 2 background screen, 3 scratch screen, 4 instruction screen, 5 Player Screen
@@ -57,16 +59,15 @@ public class GamMenu extends Game{
         return false;
     }
 
-    public boolean Back(){
-        if(Gdx.input.isKeyJustPressed(Input.Keys.B)){
-         if(nScreen>0 && nScreen<10){
-             nScreen=0;
-             updateScreen(nScreen);
-         }
-        else if(nScreen>=10){
-             nScreen =3;
-             updateScreen(nScreen);
-         }
+    public boolean Back() {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.B)) {
+            if (nScreen > 0 && nScreen < 10) {
+                nScreen = 0;
+                updateScreen(nScreen);
+            } else if (nScreen >= 10) {
+                nScreen = 3;
+                updateScreen(nScreen);
+            }
         }
         return false;
     }
@@ -84,6 +85,8 @@ public class GamMenu extends Game{
         scrInstruc = new ScrInstruc(this);
         scrPlayers = new ScrPlayers(this);
         updateScreen(0);
+        //music
+        musBg = Gdx.audio.newMusic(Gdx.files.internal("bgmusic.mp3"));
     }
 
     @Override
@@ -91,6 +94,12 @@ public class GamMenu extends Game{
         super.render();
         Menu();
         Back();
+        if (nScreen == 1 || nScreen == 10 || nScreen == 11 || nScreen == 12 || nScreen == 13) {
+            musBg.stop();
+        } else {
+            musBg.setVolume(0.5f);
+            musBg.play();
+        }
 
     }
 
