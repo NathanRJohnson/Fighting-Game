@@ -13,7 +13,6 @@ public class SprFighter extends Sprite {
     double dMaxFall;
     double dCeiling = 230; //Maximum Jump Height
     double dDelay;
-    public boolean isBlocking;
     public int BasicDamage = 10;
 
     public SprFighter(String sFile, int nX, int nY, int nW, int nH, int _nPlayer) {
@@ -36,7 +35,7 @@ public class SprFighter extends Sprite {
     public void move(double dTime) {
         v2Velocity.add(v2Acceleration);
         v2Location.add(v2Velocity);
-        v2Acceleration.setZero(); //idk
+        v2Acceleration.setZero();
 
         if (nPlayer == 1) {
             dDelay += 0.1;
@@ -51,13 +50,6 @@ public class SprFighter extends Sprite {
                     dDelay = 0;
                     v2Velocity.y = 10f;
                 }
-            }
-            if (Gdx.input.isKeyPressed(Input.Keys.S)) {
-                isBlocking = true;
-                //System.out.println("Am blocking");
-            } else {
-                isBlocking = false;
-                // System.out.println("Not Blocking");
             }
         }
 
@@ -74,13 +66,6 @@ public class SprFighter extends Sprite {
                     v2Velocity.y = 10f;
                     dDelay = 0;
                 }
-            }
-            if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-                isBlocking = true;
-                //System.out.println("Am blocking");
-            } else {
-                isBlocking = false;
-                // System.out.println("Not Blocking");
             }
         }
     }
