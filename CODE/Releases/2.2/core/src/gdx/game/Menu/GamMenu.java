@@ -13,7 +13,6 @@ public class GamMenu extends Game{
     ScrBckgd scrBckgd;
     ScrScratch scrScratch;
     ScrInstruc scrInstruc;
-    ScrScratchAnimation scrScratchAnimation;
     ScrScratchCmbt scrScratchCmbt;
     ScrScratchHealth scrScratchHealth;
     ScrPlayers scrPlayers;
@@ -37,8 +36,6 @@ public class GamMenu extends Game{
             setScreen(scrInstruc);
         } else if (nScreen == 5) {
             setScreen(scrPlayers);
-        } else if (nScreen == 10) {
-            setScreen(scrScratchAnimation);
 
         } else if (nScreen == 12) {
             setScreen(scrScratchCmbt);
@@ -78,7 +75,6 @@ public class GamMenu extends Game{
         scrPlay = new ScrPlay(this);
         scrBckgd = new ScrBckgd(this);
         scrScratch = new ScrScratch(this);
-        scrScratchAnimation = new ScrScratchAnimation(this);
         scrScratchCmbt = new ScrScratchCmbt(this);
         scrScratchHealth = new ScrScratchHealth(this);
         scrInstruc = new ScrInstruc(this);

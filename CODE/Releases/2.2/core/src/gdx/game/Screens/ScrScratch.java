@@ -48,7 +48,6 @@ public class ScrScratch implements Screen,InputProcessor {
        // btnBasicAttack.draw(batch);
         btnHealth.draw(batch);
         btnCmbt.draw(batch);
-        btnAnimation.draw(batch);
         batch.end();
     }
 

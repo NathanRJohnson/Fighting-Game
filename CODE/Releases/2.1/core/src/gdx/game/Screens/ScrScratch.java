@@ -46,9 +46,7 @@ public class ScrScratch implements Screen,InputProcessor {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
        // btnBasicAttack.draw(batch);
-        btnHealth.draw(batch);
         btnCmbt.draw(batch);
-        btnAnimation.draw(batch);
         batch.end();
     }
 

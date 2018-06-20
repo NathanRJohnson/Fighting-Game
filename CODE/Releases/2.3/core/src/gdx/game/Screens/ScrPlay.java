@@ -45,7 +45,6 @@ public class ScrPlay implements Screen, InputProcessor {
     int fW, fH, fSx, fSy;
     int nFrame, nPos;
     int nX = 100;
-    boolean P1HasWon, P2HasWon;
     public int nSecretToggle = 1;
     //----------------------------------------------
 
@@ -62,8 +61,6 @@ public class ScrPlay implements Screen, InputProcessor {
         txSpacePlatform = new Texture("Space_Platform.png");
         txDust = new Texture("Dusty_bg.png");
         txSpace = new Texture("Space_BG.jpg");
-        txP1Wins = new Texture("P1Win.png");
-        txP2Wins = new Texture("P2Win.png");
         spfSamurai = new SprFighter("Ronin.png", 70, 170, 100, 100, 1);
         spfBlackBelt = new SprFighter("Fighter_Man.png", 440, 170, 100, 100, 2);
 
@@ -134,14 +131,7 @@ public class ScrPlay implements Screen, InputProcessor {
             spfSamurai.v2Location.y = 180;
         }
 
-        if (spfSamurai.v2Location.y < -150) {
-            P1HasWon = true;
-            nWidth1 = 0;
-        }
-        if (spfBlackBelt.v2Location.y < -150) {
-            P2HasWon = true;
-            nWidth2 = 0;
-        }
+
         spfSamurai.move(dSlappedTimer1);
         spfBlackBelt.move(dSlappedTimer2);
 
@@ -241,10 +231,6 @@ public class ScrPlay implements Screen, InputProcessor {
         sprHealthBar2.draw(batch);
         //--------------------------------------------------
         batch.draw(trTemp, spfBlackBelt.v2Location.x, spfBlackBelt.v2Location.y, spfBlackBelt.getWidth(), spfBlackBelt.getHeight());
-        if (P2HasWon && !P1HasWon)
-            batch.draw(txP1Wins,170,100,300,300);
-        if (P1HasWon && !P2HasWon)
-            batch.draw(txP2Wins,170,100,300,300);
         batch.end();
 
         //Punching----------------------------------------------------------------------------------------
@@ -264,7 +250,6 @@ public class ScrPlay implements Screen, InputProcessor {
 
                 if (fHealth2 >= 0) {
                     System.out.println("Player 1 wins");
-                    P1HasWon = true;
                     nWidth1 = 0;
                 }
             }
@@ -284,7 +269,6 @@ public class ScrPlay implements Screen, InputProcessor {
                 dSlappedTimer2 = 0;
                 if (fHealth1 <= 0) {
                     System.out.println("Player 2 wins");
-                    P2HasWon = true;
                     nWidth2 = 0;
                 }
             }
