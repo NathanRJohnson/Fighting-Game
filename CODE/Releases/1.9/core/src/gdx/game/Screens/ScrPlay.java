@@ -15,12 +15,11 @@ import gdx.game.Objects.SprFighter;
 
 public class ScrPlay implements Screen, InputProcessor {
     SpriteBatch batch;
-    Texture txPlatform;
-    Texture txSpace;
+    Texture txRockPlatform, txSpacePlatform;
+    Texture txDust, txSpace;
     Texture txP1Wins, txP2Wins;
     SprFighter spfSamurai;
     SprFighter spfBlackBelt;
-    Sprite sprPlatform;
     Vector2 v2Gravity, v2Normal;
     GamMenu gamMenu;
     //CMBT scratch-----------------------------
@@ -47,7 +46,7 @@ public class ScrPlay implements Screen, InputProcessor {
     int nFrame, nPos;
     int nX = 100;
     boolean P1HasWon, P2HasWon;
-
+    public int nSecretToggle = 1;
     //----------------------------------------------
 
 
@@ -59,13 +58,14 @@ public class ScrPlay implements Screen, InputProcessor {
     public void show() {
         Gdx.input.setInputProcessor(this);
         batch = new SpriteBatch();
-        txPlatform = new Texture("Rock_Platform.png");
-        txSpace = new Texture("Dusty_bg.png");
+        txRockPlatform = new Texture("Rock_Platform.png");
+        txSpacePlatform = new Texture("Space_Platform.png");
+        txDust = new Texture("Dusty_bg.png");
+        txSpace = new Texture("Space_BG.jpg");
         txP1Wins = new Texture("P1Win.png");
         txP2Wins = new Texture("P2Win.png");
         spfSamurai = new SprFighter("Ronin.png", 70, 170, 100, 100, 1);
         spfBlackBelt = new SprFighter("Fighter_Man.png", 440, 170, 100, 100, 2);
-        sprPlatform = new Sprite(txPlatform);
 
         //Gravity--------------------------------
         v2Gravity = new Vector2(0, -1);
@@ -207,11 +207,23 @@ public class ScrPlay implements Screen, InputProcessor {
             //System.out.println(nFrame);
             nPunchState = 1;
         }
+        if (Gdx.input.isKeyPressed(Input.Keys.S)){
+            nSecretToggle = 1;
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.X)){
+            nSecretToggle = 2;
+        }
         //-------------------------------------------------------------------------------
 
         batch.begin();
-        batch.draw(txSpace, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        batch.draw(sprPlatform, 45, 10, 550, 200);
+        if(nSecretToggle == 1) {
+            batch.draw(txDust, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(txRockPlatform, 45, 10, 550, 200);
+        }
+        if(nSecretToggle == 2) {
+            batch.draw(txSpace, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(txSpacePlatform, 45, 10, 550, 200);
+        }
         sprBlackBelt.setTexture(trTemp.getTexture());
         batch.draw(spfSamurai, spfSamurai.v2Location.x, spfSamurai.v2Location.y, spfSamurai.getWidth(), spfSamurai.getHeight());
         //Health Bar Scratch Stuff -----------------------
@@ -229,9 +241,9 @@ public class ScrPlay implements Screen, InputProcessor {
         sprHealthBar2.draw(batch);
         //--------------------------------------------------
         batch.draw(trTemp, spfBlackBelt.v2Location.x, spfBlackBelt.v2Location.y, spfBlackBelt.getWidth(), spfBlackBelt.getHeight());
-        if (P2HasWon)
+        if (P2HasWon && !P1HasWon)
             batch.draw(txP1Wins,170,100,300,300);
-        if (P1HasWon)
+        if (P1HasWon && !P2HasWon)
             batch.draw(txP2Wins,170,100,300,300);
         batch.end();
 
@@ -241,6 +253,7 @@ public class ScrPlay implements Screen, InputProcessor {
                 if (spfSamurai.isBlocking == true) {
                     fHealth2 += spfBlackBelt.BasicDamage / 2;
                     nWidth2 -= 11;
+                    nKnockback /= 2;
                 } else {
                     fHealth2 += spfBlackBelt.BasicDamage;
                     nWidth1 -= 22;
@@ -252,15 +265,16 @@ public class ScrPlay implements Screen, InputProcessor {
                 if (fHealth2 >= 0) {
                     System.out.println("Player 1 wins");
                     P1HasWon = true;
+                    nWidth1 = 0;
                 }
             }
         }
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && dPunchDelay2 > 2 && dSlappedTimer1 > 2) {
-
             if (basicAttack(spfBlackBelt, spfSamurai)) {
                 if (spfBlackBelt.isBlocking == true) {
                     fHealth1 -= spfSamurai.BasicDamage / 2;
                     nWidth2 += 11;
+                    nKnockback /= 2;
                 } else {
                     fHealth1 -= spfSamurai.BasicDamage;
                     nWidth2 += 22;
@@ -271,6 +285,7 @@ public class ScrPlay implements Screen, InputProcessor {
                 if (fHealth1 <= 0) {
                     System.out.println("Player 2 wins");
                     P2HasWon = true;
+                    nWidth2 = 0;
                 }
             }
         }
@@ -324,7 +339,10 @@ public class ScrPlay implements Screen, InputProcessor {
         batch.dispose();
         spfSamurai.getTexture().dispose();
         spfBlackBelt.getTexture().dispose();
-        sprPlatform.getTexture().dispose();
+        txSpacePlatform.dispose();
+        txRockPlatform.dispose();
+        txSpace.dispose();
+        txDust.dispose();
     }
 
     @Override

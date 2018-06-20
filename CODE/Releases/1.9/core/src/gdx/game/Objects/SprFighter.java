@@ -40,11 +40,11 @@ public class SprFighter extends Sprite {
 
         if (nPlayer == 1) {
             dDelay += 0.1;
-            if (Gdx.input.isKeyPressed(Input.Keys.A) && dTime >= 1 && canMove == true)
+            if (Gdx.input.isKeyPressed(Input.Keys.A) && dTime >= 2 && canMove == true)
                 v2Location.x -= 4f;
 
-            if (Gdx.input.isKeyPressed(Input.Keys.D) && dTime >= 1 && canMove == true)
-                v2Location.x += 5f;
+            if (Gdx.input.isKeyPressed(Input.Keys.D) && dTime >= 2 && canMove == true)
+                v2Location.x += 4f;
 
             if (v2Location.y < dCeiling && dDelay > 3) {
                 if (Gdx.input.isKeyPressed(Input.Keys.W)) {
@@ -63,10 +63,10 @@ public class SprFighter extends Sprite {
 
         if (nPlayer == 2) {
             dDelay += 0.1;
-            if (Gdx.input.isKeyPressed(Input.Keys.LEFT)&& dTime >= 1 && canMove)
-                v2Location.x -= 5f;
+            if (Gdx.input.isKeyPressed(Input.Keys.LEFT)&& dTime >= 2 && canMove)
+                v2Location.x -= 4f;
 
-            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)&& dTime >= 1 && canMove)
+            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)&& dTime >= 2 && canMove)
                 v2Location.x += 4f;
 
             if (v2Location.y < dCeiling && dDelay > 3) {

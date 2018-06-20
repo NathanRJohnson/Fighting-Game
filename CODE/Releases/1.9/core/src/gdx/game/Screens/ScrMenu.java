@@ -23,10 +23,12 @@ public class ScrMenu implements Screen,InputProcessor {
     Title ttlStart;
     GamMenu gamMenu;
 
+
     public ScrMenu(GamMenu _gamMenu){gamMenu = _gamMenu;}
     @Override
     public void show() {
         //Ortho
+
         oc = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         oc.setToOrtho(true, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         oc.update();
@@ -65,6 +67,7 @@ public class ScrMenu implements Screen,InputProcessor {
 
     }
 
+
     @Override
     public void resize(int width, int height) {
 
@@ -92,8 +95,10 @@ public class ScrMenu implements Screen,InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+
         return false;
     }
+
 
     @Override
     public boolean keyUp(int keycode) {
