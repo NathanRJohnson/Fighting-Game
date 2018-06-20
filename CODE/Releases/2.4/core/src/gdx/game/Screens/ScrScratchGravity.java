@@ -10,6 +10,7 @@ import com.badlogic.gdx.math.Vector2;
 import gdx.game.Menu.GamMenu;
 import gdx.game.Objects.SprFighter;
 
+// SCRATCH NOT DISPLAYED BUT HERE :D
 public class ScrScratchGravity implements Screen, InputProcessor {
     SpriteBatch batch;
     Texture txPlatform;
